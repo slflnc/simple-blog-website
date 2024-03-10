@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/layout1.css">
+    <link rel="stylesheet" href="/styles/blogs.css">
+    <title>Document</title>
+</head>
+<body>
+    <header><%- include("partials/header.ejs") %></header>
+
+    <section class="blogs">
+            <div class="posting">
+                <h2>Add a blog</h2>
+                    <form class="contact-form" action="/blogs" method="POST">
+                        <input type="hidden" name="id" value="<%= id %>">
+                        <label class="labels" for="name">Blog Title</label>
+                        <textarea class="inputs" type="text" name="name" id="name" required></textarea>
+                        <label class="labels" type="text">Blog Snippet</label>
+                        <textarea class="inputs" type="text" name="snippet" id="snippet" required></textarea>
+                        <label class="labels" for="body">Blog Message</label>
+                        <textarea class="inputs" type="text" name="body" id="body" required></textarea>
+                        <input class="sub" type="submit" id="sub-button" value="POST">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="foot"><%- include("partials/footer.ejs") %></footer>
+</body>
+   
+</html>

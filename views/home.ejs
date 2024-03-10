@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/layout1.css">
+    <link rel="stylesheet" href="/styles/home.css">
+    <title>Document</title>
+</head>
+<body>
+    <header><%- include("partials/header.ejs") %></header>
+    <section class="home">
+        <div class="welcome">
+            <h1>Welcome to SimpleBlogs</h1>
+        </div>
+        <% if (locals.blogEntries && locals.blogEntries.length > 0) { %>
+            <h1>All Blogs</h1>
+            <div class="grid-container">
+                <% locals.blogEntries.forEach(function(blogEntry, index) { %>
+                    <div class="grid-item-1" data-blog-id="<%= blogEntry.id %>">
+                        <h3><%= blogEntry.name %></h3>
+                        <p><%= blogEntry.snippet %></p>
+                        <p><%= blogEntry.body %></p>
+                        <div class="buttons">
+                            <form action="/edititems/<%= blogEntry.id %>" method="GET">
+                                <button type="submit" class="edit-button">Edit Blog</button>
+                            </form>
+                            <form action="/deleteitems/<%= blogEntry.id %>?_method=DELETE" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="id" value="<%= blogEntry.id %>">
+                                <button type="submit" class="delete-button">Delete Blog</button>
+                            </form>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        <% } else { %>
+            <div class="no-blogs">
+                <h1>No Blogs Available</h1>
+                <h2>More blogs on the way soon!</h2>
+                <h3>Or create your own!?</h3>
+            </div>
+        <% } %>
+    </section>
+    <footer class="foot"><%- include("partials/footer.ejs") %></footer>
+    <script src="/front.js"></script>
+</body>
+</html>

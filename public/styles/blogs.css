@@ -1,0 +1,66 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.blogs{
+    height: 100vh;
+    background-color: aliceblue;
+}
+
+.blogs h2{
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+
+.posting {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    margin-top: 45px;
+    line-height: 1.5;
+}
+
+.labels{
+    margin-top: 20px;
+}
+
+.inputs{
+    margin-top: 5px;
+    height: 50px;
+    vertical-align: top;
+    font-size: 23px;
+    padding: 10px;
+    line-height: normal;
+}
+
+#body{
+    height: 150px
+}
+
+#sub-button{
+    width: 25%;
+    border: none;
+    background-color: rgb(214, 31, 31);
+    color: aliceblue;
+    margin-top: 10px;
+    height: 40px;
+}
+
+
+
+
+

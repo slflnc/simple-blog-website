@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/layout1.css">
+    <link rel="stylesheet" href="/styles/contact.css">
+    <link rel="stylesheet" href="/styles/blogs.css">
+    <title>Document</title>
+</head>
+<body>
+    <header><%- include("partials/header.ejs") %></header>
+
+    <section class="form-container">
+        <div class="posting">
+        <h1>Contact us!</h1>
+        <form class="contact-form" action="/contact/customers" method="POST">
+            <label class="labels" for="name">Name:</label>
+            <textarea class="inputs" type="text" name="name" id="cust-name" placeholder="Enter your name here..." required></textarea>
+            <label class="labels" type="text">Email:</label>
+            <textarea class="inputs" type="email" name="email" id="address" placeholder="Enter your email address..." required></textarea>
+            <label class="labels" for="body">Your Message</label>
+            <textarea class="inputs" type="text" name="message" id="body" placeholder="Please write your enquiry here..." required></textarea>
+            <input class="sub" type="submit" name="Submit" id="sub-button" value="Send">
+        </form>
+        </div>
+    </section>
+
+    <footer class="foot"><%- include("partials/footer.ejs") %></footer>
+</body>
+    
+</html>
